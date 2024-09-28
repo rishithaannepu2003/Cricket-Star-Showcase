@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Legends Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <nav>
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('profiles')">Player Profiles</button>
+        <button onclick="showSection('map')">Interactive Map</button>
+        <button onclick="showSection('top-matches')">Top Matches</button>
+        <button onclick="showSection('fan-zone')">Fan Zone</button>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h1>Welcome to Cricket Legends Hub</h1>
+        <p>Explore the world of cricket and learn about legendary players from around the globe!</p>
+        <p>Cricket has captivated fans for generations, producing some of the greatest athletes in sports history.</p>
+    </section>
+
+    <!-- Player Profiles Section -->
+    <section id="profiles" class="section" style="display:none;">
+        <h2>Player Profiles</h2>
+        <div class="player-profile">
+            <img src="images/player1.jpg" alt="Virat Kohli">
+            <h3>Virat Kohli </h3>
+            <p><strong> Career Status:</strong> Matches: 254, Runs: 12,000, Centuries: 43</p>
+        </div>
+        <div class="player-profile">
+            <img src="images/player2.jpg" alt="MS Dhoni">
+            <h3>MS Dhoni </h3>
+            <p><strong> Career Status:</strong> Matches: 350, Runs: 10,773, Centuries: 10</p>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section id="map" class="section" style="display:none;">
+        <h2>Player Hometowns</h2>
+        <p>Click the map to see where your favorite players come from!</p>
+        <div id="kohli-dhoni-map"></div>
+    </section>
+
+    <!-- Top Matches Section -->
+    <section id="top-matches" class="section" style="display:none;">
+        <h2>Top Matches</h2>
+        <p>Here are some memorable games:</p>
+        <ul>
+            <li>
+                <h3>India vs Pakistan - 2007 T20 World Cup Final</h3>
+                <p><a href="https://www.youtube.com/watch?v=example" target="_blank">Watch Highlights</a></p>
+            </li>
+            <li>
+                <h3>India vs Australia - 2021 Gabba Test</h3>
+                <p><a href="https://www.youtube.com/watch?v=example" target="_blank">Watch Highlights</a></p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Fan Zone Section -->
+    <section id="fan-zone" class="section" style="display:none;">
+        <h2>Fan Zone</h2>
+        <p>Submit your favorite player story or vote for the greatest player of all time!</p>
+        <form action="#">
+            <label for="player-name">Favorite Player:</label>
+            <input type="text" id="player-name" name="player-name"><br><br>
+            <label for="story">Your Story:</label><br>
+            <textarea id="story" name="story" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        // Function to show/hide sections based on the button clicked
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
